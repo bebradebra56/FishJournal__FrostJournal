@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frost_journal_graph"
+    app:startDestination="@id/frostJournalLoadFragment">
+
+    <fragment
+        android:id="@+id/frostJournalLoadFragment"
+        android:name="com.fishjorunal.sofircl.lpnyht.presentation.ui.load.FrostJournalLoadFragment"
+        android:label="FrostJournalLoadFragment" >
+        <action
+            android:id="@+id/action_frostJournalLoadFragment_to_frostJournalV"
+            app:destination="@id/frostJournalV"
+            app:popUpTo="@id/frost_journal_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/frostJournalV"
+        android:name="com.fishjorunal.sofircl.lpnyht.presentation.ui.view.FrostJournalV"
+        android:label="FrostJournalV" />
+</navigation>
