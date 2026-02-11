@@ -41,6 +41,7 @@ class FrostJournalRepository {
         install(ContentNegotiation) {
             json(Json {
                 ignoreUnknownKeys = true
+                encodeDefaults = true
             })
         }
         install(HttpTimeout) {
@@ -60,7 +61,10 @@ class FrostJournalRepository {
                 Log.d(FROST_JOURNAL_MAIN_TAG, "Ktor: Intercept body ${request.body}")
                 execute(request)
             }
-            val json = Json { ignoreUnknownKeys = true }
+            val json = Json {
+                ignoreUnknownKeys = true
+                encodeDefaults = true
+            }
             Log.d(
                 FROST_JOURNAL_MAIN_TAG,
                 "Ktor: conversation json: ${frostJournalConversion.toString()}"
